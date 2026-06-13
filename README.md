@@ -6,7 +6,19 @@ This repository is a benchmark instrument and the raw, verifiable data from runn
 
 The two instruments are deliberately dumb: two single-file Python programs, no LLM, no network, no key, deterministic. Given the same input they always return the same output. That property is what makes the runs in here *provable*: the full execution transcript is included, and `verify/verify_calls.py` re-runs every tool call on its recorded input and confirms the output the model received is exactly what the tool produces now. A run in this repo cannot have been faked.
 
-> **Status: prepared, not yet published as findings.** The data and verification are complete and reproducible. The observations are still being written ([`observations/`](observations/)). Nothing here claims a result yet. When the observation pass is done, the findings go in `observations/` and only then does this go out.
+> **Status: concluded.** ~13 runs (a small model and a frontier model, 40-turn open-ended reasoning, blind order-swapped judging, a 209-call corpus measurement). Findings below; full write-ups dated in [`observations/`](observations/), runs in [`runs/`](runs/), measurement in [`analysis/`](analysis/).
+
+## Headline finding
+
+**The tools do not make an agent reason better. They make its reasoning legible and checkable at the moments that matter, and they reward a metacognitive discipline they cannot create.**
+
+- **Reliable and auditable (strong).** Both tools are deterministic, re-runnable, model-independent. Every call is a verifiable record of what the agent checked. This is the durable, defensible value, and almost no other agent tool can claim it.
+- **Reasoning uplift is conditional, not automatic.** Forced on every step, the tools *lose to using no tools at all* in blind judging (35 turns to 5), because mandatory self-examination manufactures staged corrections that read worse than nothing. They help only when fired selectively, at a genuine wall, by a model capable of judging that it is stuck.
+- **Dose-response: less is more.** On a frontier model, 2 self-chosen calls beat 0 tools beat a forced budget of 8. The peak is minimal, self-triggered use; forcing any cadence underperforms. A fixed ratio is the wrong control variable.
+- **The deciding axis is genuine vs staged self-correction, and it is textually detectable.** A tool call helps when it forces a real redirect (a new distinction, plus a concrete counterexample, plus downstream dependence) and hurts when it stages one (overclaim, then a scheduled walk-back, then a recycled "breakthrough").
+- **The shippable recipe:** selective and self-triggered, with a per-tool output-use recipe, on a model capable of telling a real wall from a manufactured one. Teaching that recipe produced the strongest run in the corpus.
+
+**For an agentic stack:** adopt them as *governed checkpoints at genuine decision points on capable agents*, not as an ambient wrapper. Mandatory reflection loops are an anti-pattern that capable models route around or perform theatrically; this benchmark is a measurable instance of reflection done right.
 
 ## The two instruments
 

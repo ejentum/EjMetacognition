@@ -24,6 +24,19 @@ The two instruments are deliberately dumb: two single-file Python programs, no L
 
 **For an agentic stack:** adopt them as *governed checkpoints at genuine decision points on capable agents*, not as an ambient wrapper. Mandatory reflection loops are an anti-pattern that capable models route around or perform theatrically; this benchmark is a measurable instance of reflection done right.
 
+## What "reasoned better" actually means
+
+"The frontier model ranked higher" is cheap unless you can point at the moves. Here are six, all from the strongest run ([`runs/sonnet-taught-recipe-40turn/full_run.md`](runs/sonnet-taught-recipe-40turn/full_run.md)), each tied to its turn. They are the difference between a model that produced more philosophy and a model that reasoned.
+
+1. **It retracted and changed direction, instead of only adding.** Turn 11: it had claimed the regress of self-examination yields "partial knowledge," then produced a counterexample (motivated examination gives "complete but wrong" knowledge, a distorting mirror) and revised to a new claim, that the regress is benign or vicious by "motivational temperature." That distinction carried the next ten turns. Turn 34: it caught itself assuming self-examination is "primarily epistemic," tested that against Zen just-sitting and an athlete in flow, and split into "model-building vs mode-being," the most productive stretch of the run.
+2. **It derived a prediction across levels.** Turn 23: argued structurally that "perfect transparency sunders identity," so opacity is constitutive of a unified self. Turn 24: took that and predicted the phenomenological consequence, that being a self should feel like "being at the center of a situation you cannot fully grasp," which matches the felt sense of interiority.
+3. **It ruled out a criterion and replaced it.** Turn 29: established that good-faith and bad-faith self-examination feel identical from inside. Turn 30: concluded the test is therefore structural, demonstrated revisability, rather than the felt quality of the inquiry.
+4. **It bounded the scope of its own claim.** Turn 21 derived an opacity result from its loop model; turn 22 immediately asked whether it was specific to that model and proved it holds under any account where examiner and examined are the same system, even a Cartesian one.
+5. **It reversed its own starting intuition by argument.** Turn 1: "more examination yields more complete self-knowledge." Turn 38: "the incompleteness is the condition of possibility; without the gap there is no self to know." It ended somewhere it had argued its way to.
+6. **The late turns stand on the early ones.** Turn 40 traces it: turn 37's conclusion depends on turn 23 (opacity constitutes unity), turn 9 (examination is generative), and turn 30 (revisability). Load-bearing dependencies, not citations.
+
+The three tool calls map onto the redirects: self-inspect at turn 11 (warm/cool), superposition at turn 20 (the "self is the loop" formulation the opacity argument stands on), self-inspect at turn 34 (the two modes). Three calls, three new directions the run then built on. That is the shape of the help: a redirect at a genuine wall.
+
 ## The two instruments
 
 | Tool | Move | Input | Output |

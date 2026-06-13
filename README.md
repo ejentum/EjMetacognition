@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/thinking-loop.png" alt="Thinking Loop: the metacognition benchmark. A model thinking about its own thinking, 40 turns, two deterministic tools, blind-judged." width="100%">
+</p>
+
 # metacognition-bench
 
 **What two deterministic metacognition tools do to a small model's reasoning over a long, stateful chain.**
